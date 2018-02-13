@@ -8,5 +8,3 @@ Curso voltado para o aprendizado de desenvolvimento de aplicações utilizando I
 * Acesse o diretório do projeto pela CLI do Node.
 * Rode o comando `npm install` para instalar as dependencias.
 * Rode o comando `ionic serve` para criar um servidor local para rodar a aplicação.
-
-

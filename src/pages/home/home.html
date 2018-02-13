@@ -1,14 +1,50 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Inicio
+        </ion-title>
+    </ion-navbar>
+    <!-- TOOLBAR CONTENTO O CONTROLADOR O MENU DE SEGUMENTAÇÃO -->
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="segmento" color="dark">
+            <ion-segment-button value="angular">
+                Angular
+            </ion-segment-button>
+            <ion-segment-button value="componentes">
+                Componentes
+            </ion-segment-button>
+            <ion-segment-button value="api">
+                API
+            </ion-segment-button>
+            <ion-segment-button value="plugins">
+                Plugins
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <!-- SWITCH DO ANGULAR PARA TROCAR QUAL CONTEUDO DA SEGMENTAÇÃO MOSTRAR NA TELA -->
+    <div [ngSwitch]="segmento">
+        <ion-list *ngSwitchCase="'angular'">
+            <button ion-item *ngFor="let ang of angular" (click)="irParaPagina(ang.pagina)">
+        {{ ang.titulo }}
+      </button>
+        </ion-list>
+        <ion-list *ngSwitchCase="'componentes'">
+            <button ion-item *ngFor="let componente of componentes" (click)="irParaPagina(componente.pagina)">
+        {{ componente.titulo }}
+      </button>
+        </ion-list>
+        <ion-list *ngSwitchCase="'api'">
+            <button ion-item *ngFor="let ap of api" (click)="irParaPagina(ap.pagina)">
+            {{ ap.titulo }}
+          </button>
+        </ion-list>
+        <ion-list *ngSwitchCase="'plugins'">
+            <button ion-item *ngFor="let plugin of plugins" (click)="irParaPagina(plugin.pagina)">
+            {{ plugin.titulo }}
+          </button>
+        </ion-list>
+    </div>
 </ion-content>
