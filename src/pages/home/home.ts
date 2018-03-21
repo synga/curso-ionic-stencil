@@ -21,7 +21,8 @@ export class HomePage {
     { titulo: "Configuration", pagina: "ConfigurationPage" },
     { titulo: "Requisições HTTP", pagina: "HttpPage" },
     { titulo: "Events", pagina: "EventsPage" },
-    { titulo: "Storage", pagina: "StoragePage" }
+    { titulo: "Storage", pagina: "StoragePage" },
+    { titulo: "ViewChild", pagina: "ViewchildPage" }
   ];
 
   /**
