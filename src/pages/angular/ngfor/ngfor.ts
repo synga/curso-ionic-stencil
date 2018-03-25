@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the NgmodelPage page.
+ * Generated class for the NgforPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-ngmodel',
-  templateUrl: 'ngmodel.html',
+  selector: 'page-ngfor',
+  templateUrl: 'ngfor.html',
 })
-export class NgmodelPage {
+export class NgforPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NgmodelPage');
+    console.log('ionViewDidLoad NgforPage');
   }
 
 }
