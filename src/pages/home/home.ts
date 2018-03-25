@@ -30,7 +30,6 @@ export class HomePage {
    */
   public angular: Array<{ titulo: string; pagina: any }> = [
     { titulo: "Data Binding", pagina: "BindingPage" },
-    { titulo: "NgModel", pagina: "NgmodelPage" },
     { titulo: "NgIf", pagina: "NgifPage" },
     { titulo: "NgFor", pagina: "NgforPage" },
     { titulo: "NgSwitch", pagina: "NgswitchPage" },
