@@ -61,6 +61,7 @@ export class HomePage {
     { titulo: "Inputs", pagina: "InputsPage" },
     { titulo: "Datetime", pagina: "DatetimePage" },
     { titulo: "Range", pagina: "RangePage" },
+    { titulo: "Toggle", pagina: "TogglePage" },
     { titulo: "Modal", pagina: "ModalPage" },
     { titulo: "Popover", pagina: "PopoverPage" },
     { titulo: "Infinite Scroll", pagina: "InfiniteScrollPage" },
