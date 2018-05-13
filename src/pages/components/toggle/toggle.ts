@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SplitPanelPage page.
+ * Generated class for the TogglePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-split-panel',
-  templateUrl: 'split-panel.html',
+  selector: 'page-toggle',
+  templateUrl: 'toggle.html',
 })
-export class SplitPanelPage {
+export class TogglePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SplitPanelPage');
+    console.log('ionViewDidLoad TogglePage');
   }
 
 }
