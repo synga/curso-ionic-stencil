@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { NavController } from "ionic-angular";
+import { NavController, Platform } from "ionic-angular";
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: "page-home",
@@ -7,26 +8,7 @@ import { NavController } from "ionic-angular";
 })
 export class HomePage {
   /**
-   * Array de objetos contento todas as páginas da lista de APIs.
-   */
-  public api: Array<{ titulo: string; pagina: any }> = [
-    { titulo: "Navcontroller", pagina: "NavcontrollerPage" },
-    { titulo: "NavParams", pagina: "NavparamsPage" },
-    { titulo: "Lifecycle Hooks", pagina: "LifecyclePage" },
-    { titulo: "NavGuards", pagina: "NavguardsPage" },
-    { titulo: "View Controller", pagina: "ViewControllerPage" },
-    { titulo: "ElementRef", pagina: "ElementrefPage" },
-    { titulo: "Platform", pagina: "PlatformPage" },
-    { titulo: "Content", pagina: "ContentPage" },
-    { titulo: "Configuration", pagina: "ConfigurationPage" },
-    { titulo: "Requisições HTTP", pagina: "HttpPage" },
-    { titulo: "Events", pagina: "EventsPage" },
-    { titulo: "Storage", pagina: "StoragePage" },
-    { titulo: "ViewChild", pagina: "ViewchildPage" }
-  ];
-
-  /**
-   * Array de objetos contento todas as páginas da lista de componentes do Angular.
+   * Array de objetos contendo todas as páginas da lista de componentes do Angular.
    */
   public angular: Array<{ titulo: string; pagina: any }> = [
     { titulo: "Data Binding", pagina: "BindingPage" },
@@ -34,11 +16,11 @@ export class HomePage {
     { titulo: "NgFor", pagina: "NgforPage" },
     { titulo: "NgSwitch", pagina: "NgswitchPage" },
     { titulo: "Ngclass", pagina: "NgclassPage" },
-    {titulo: "Form", pagina: "FormPage"}
+    { titulo: "Form", pagina: "FormPage" }
   ];
 
   /**
-   * Array de objetos contento todas as páginas da lista de componentes.
+   * Array de objetos contendo todas as páginas da lista de componentes.
    */
   public componentes: Array<{ titulo: string; pagina: any }> = [
     { titulo: "Buttons", pagina: "ButtonsPage" },
@@ -68,13 +50,12 @@ export class HomePage {
     { titulo: "Refresher", pagina: "RefresherPage" },
     { titulo: "Searchbar", pagina: "SearchbarPage" },
     { titulo: "Menus", pagina: "MenusPage" },
-    { titulo: "Split Panel", pagina: "SplitPanelPage" },
     { titulo: "Tabs", pagina: "TabsPage" },
     { titulo: "Virtual Scroll", pagina: "VirtualScrollPage" }
   ];
 
   /**
-   * Array de objetos contento todas as páginas da lista de plugins.
+   * Array de objetos contendo todas as páginas da lista de plugins.
    */
   public plugins: Array<{ titulo: string; pagina: any }> = [
     { titulo: "Camera", pagina: "CameraPage" },
@@ -85,11 +66,11 @@ export class HomePage {
   ];
 
   /**
-   * Variavel para ontrolar o menu de segmentação
+   * Variavel para controlar o menu de segmentação
    */
   public segmento: string = "angular";
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public storage: Storage, public platform: Platform) { }
 
   /**
    * Metodo que leva para outra página a partir do nome do componentes da página passado por parametro
@@ -98,4 +79,23 @@ export class HomePage {
   irParaPagina = (pagina: string) => {
     this.navCtrl.push(pagina);
   };
+
+  ionViewDidLoad = () => {
+    this.platform.ready().then(() => {
+      // salvando um item
+      this.storage.set('nome', 'Gabriel').then(() => {
+        // buscando um item
+        this.storage.get('nome').then(nome => {
+          console.log('storage.get', nome);
+          // removendo um item
+          this.storage.remove('nome').then(() => {
+            // limpandno o DB
+            this.storage.clear().then(() => {
+
+            });
+          })
+        })
+      });
+    })
+  }
 }
