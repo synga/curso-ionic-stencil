@@ -13,6 +13,9 @@
             <ion-segment-button value="componentes">
                 Componentes
             </ion-segment-button>
+            <ion-segment-button value="api">
+                API
+            </ion-segment-button>
             <ion-segment-button value="plugins">
                 Plugins
             </ion-segment-button>
@@ -31,6 +34,11 @@
         <ion-list *ngSwitchCase="'componentes'">
             <button ion-item *ngFor="let componente of componentes" (click)="irParaPagina(componente.pagina)">
         {{ componente.titulo }}
+      </button>
+        </ion-list>
+        <ion-list *ngSwitchCase="'api'">
+            <button ion-item *ngFor="let api of apis" (click)="irParaPagina(api.pagina)">
+        {{ api.titulo }}
       </button>
         </ion-list>
         <ion-list *ngSwitchCase="'plugins'">

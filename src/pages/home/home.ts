@@ -57,6 +57,16 @@ export class HomePage {
   /**
    * Array de objetos contendo todas as páginas da lista de plugins.
    */
+  public apis: Array<{ titulo: string; pagina: any }> = [
+    { titulo: "Pipes", pagina: "PipesPage" },
+    { titulo: "Directives", pagina: "DirectivesPage" },
+    { titulo: "Providers", pagina: "ProvidersPage" },
+    { titulo: "Components", pagina: "ComponentsPage" },
+  ];
+
+  /**
+   * Array de objetos contendo todas as páginas da lista de plugins.
+   */
   public plugins: Array<{ titulo: string; pagina: any }> = [
     { titulo: "Camera", pagina: "CameraPage" },
     { titulo: "Geolocation", pagina: "GeolocationPage" },
