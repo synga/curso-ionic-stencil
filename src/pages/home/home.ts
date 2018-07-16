@@ -70,9 +70,7 @@ export class HomePage {
   public plugins: Array<{ titulo: string; pagina: any }> = [
     { titulo: "Camera", pagina: "CameraPage" },
     { titulo: "Geolocation", pagina: "GeolocationPage" },
-    { titulo: "Device", pagina: "DevicePage" },
-    { titulo: "Network", pagina: "NetworkPage" },
-    { titulo: "Local Notification", pagina: "LocalNotificationPage" }
+    { titulo: "Network", pagina: "NetworkPage" }
   ];
 
   /**
