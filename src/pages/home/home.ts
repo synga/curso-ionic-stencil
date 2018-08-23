@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { NavController, Platform } from "ionic-angular";
-import { Storage } from '@ionic/storage';
 
 @Component({
   selector: "page-home",
@@ -87,23 +86,4 @@ export class HomePage {
   irParaPagina = (pagina: string) => {
     this.navCtrl.push(pagina);
   };
-
-  ionViewDidLoad = () => {
-    this.platform.ready().then(() => {
-      // salvando um item
-      this.storage.set('nome', 'Gabriel').then(() => {
-        // buscando um item
-        this.storage.get('nome').then(nome => {
-          console.log('storage.get', nome);
-          // removendo um item
-          this.storage.remove('nome').then(() => {
-            // limpandno o DB
-            this.storage.clear().then(() => {
-
-            });
-          })
-        })
-      });
-    })
-  }
 }
