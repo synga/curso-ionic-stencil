@@ -77,7 +77,7 @@ export class HomePage {
    */
   public segmento: string = "angular";
 
-  constructor(public navCtrl: NavController, public storage: Storage, public platform: Platform) { }
+  constructor(public navCtrl: NavController, public platform: Platform) { }
 
   /**
    * Metodo que leva para outra página a partir do nome do componentes da página passado por parametro
